@@ -25,3 +25,36 @@ jackson-dataformat-xml
 далее указывается версия java используемая в проекте
 созданный в проекте war файл закидываем в папку webapps в каталоге, котором установлен Томкат
 Перезапускаем томкат
+
+
+
+Создаем пустую базу, для этого в консоле набираем:
+create database test_db;
+show databases;
+use test_db;
+
+Создаем таблицу DICTIONARY
+create table DICTIONARY(
+id int not null primary key auto_increment,
+discriminator varchar(10),
+name varchar(25),
+ext_id int
+);
+
+Создаем записи dictionary
+insert into dictionary(discriminator, name)
+value('ROLE', 'USER');
+
+insert into dictionary(discriminator, name)
+value('ROLE', 'ADMIN');
+
+Создаем таблицу user
+create table user(
+id int not null PRIMARY KEY AUTO_INCREMENT,
+name varchar(25),
+role varchar(4)
+);
+
+Вносим данные в таблицу
+insert into user (name, role)
+value('user1', 'ADMIN' );

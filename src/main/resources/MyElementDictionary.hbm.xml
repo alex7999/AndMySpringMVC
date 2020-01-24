@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.andMySpringMVC.springmvc.domain.MyElementDictionary" table="dictionary">
+        <meta attribute="class-description">
+            This class contains dictionary's details.
+        </meta>
+        <id name="id" type="int" column="ID">
+            <generator class="native"/>
+        </id>
+        <property name="discriminator" column="discriminator" type="string"/>
+        <property name="name" column="name" type="string"/>
+        <property name="ext_id" column="ext_id" type="int"/>
+    </class>
+</hibernate-mapping>

@@ -4,7 +4,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.andMySpringMVC.springmvc.domain.Message;
+import com.andMySpringMVC.springmvc.domain.MyElementDictionaryRunner;
+import com.andMySpringMVC.springmvc.domain.MyElementDictionary;
 
 @RestController
 public class AndMySpringMVCRestController {
@@ -15,9 +16,10 @@ public class AndMySpringMVCRestController {
     }
 
     @RequestMapping("/hello/{player}")
-    public Message message(@PathVariable String player) {//REST Endpoint.
+    public MyElementDictionary message(@PathVariable String player) {//REST Endpoint.
 
-        Message msg = new Message(player, "Hello " + player);
+        MyElementDictionaryRunner elementDictionaryRunner = new MyElementDictionaryRunner();
+        MyElementDictionary msg = elementDictionaryRunner.getFirstElementDictionary();
         return msg;
     }
 }

@@ -58,3 +58,35 @@ role varchar(4)
 ¬носим данные в таблицу
 insert into user (name, role)
 value('user1', 'ADMIN' );
+
+ƒл€ св€зи двухтаблиц создадим foreign key дл€ пол€ ext_id
+alter table dictionary
+    -> add constraint user_id_fk
+    -> foreign key (ext_id) references user (id) on delete cascade on update cascade;
+ERROR 1452 (23000): Cannot add or update a child row: a foreign key constraint fails (`satest_db`.`#sql-a70_8`, CONSTRAINT `user_id_fk` FOREIGN KEY (`ext_id`) REFERENCES `user` (`id`) 
+ON DELETE CASCADE ON UPDATE CASCADE)
+возникает ошибка поскольку уже есть записи наршающие ссылочную целостность
+очистим таблицу dictionary
+
+delete from dictionary;
+
+повторим изменение таблиы
+alter table dictionary
+    -> add constraint user_id_fk
+    -> foreign key (ext_id) references user (id) on delete cascade on update cascade;
+    в этот раз успешно.
+    
+     
+     insert into dictionary(descriminator, name, ext_id)
+         -> value('role','user1',2);
+         
+         сделаем выборку чтоб получить сводную таблицу
+         
+         select d.id, d.name, u.name from dictionary d left join user u
+             -> on (d.ext_id = u.id);
+         +----+-------+------+
+         | id | name  | name |
+         +----+-------+------+
+         |  3 | user1 | saha |
+         +----+-------+------+
+         1 row in set (0.01 sec)

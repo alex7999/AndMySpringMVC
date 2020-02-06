@@ -1,12 +1,15 @@
 package com.andMySpringMVC.springmvc.configuration;
 
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
+@Transactional
+//@WebAppConfiguration
 public class AndMySpringMVCInitializer extends AbstractAnnotationConfigDispatcherServletInitializer {
 
     @Override
     protected Class<?>[] getRootConfigClasses() {
-        return new Class[] { AndMySpringMVCConfiguration.class };
+        return new Class[] { HibernateConfig.class };
     }
 
     @Override

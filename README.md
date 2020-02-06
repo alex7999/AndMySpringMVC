@@ -90,3 +90,5 @@ alter table dictionary
          |  3 | user1 | saha |
          +----+-------+------+
          1 row in set (0.01 sec)
+         
+         хороший пост https://www.boraji.com/spring-4-hibernate-5-integration-example-with-zero-xml

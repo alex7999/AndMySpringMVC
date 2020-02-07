@@ -9,7 +9,8 @@ public class AndMySpringMVCInitializer extends AbstractAnnotationConfigDispatche
 
     @Override
     protected Class<?>[] getRootConfigClasses() {
-        return new Class[] { HibernateConfig.class };
+        return new Class[] {
+                SecurityConfig.class, HibernateConfig.class };
     }
 
     @Override

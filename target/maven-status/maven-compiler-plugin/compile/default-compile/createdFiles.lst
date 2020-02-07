@@ -7,10 +7,12 @@ com\andMySpringMVC\springmvc\controller\AndMySpringMVCRestControllerRole.class
 com\andMySpringMVC\springmvc\model\User.class
 com\andMySpringMVC\springmvc\service\RoleService.class
 com\andMySpringMVC\springmvc\service\UserService.class
+com\andMySpringMVC\springmvc\configuration\SecurityWebApplicationinitializer.class
 com\andMySpringMVC\springmvc\dao\UserDAOImpl.class
 com\andMySpringMVC\springmvc\domain\TestDictionary.class
 com\andMySpringMVC\springmvc\service\RoleServiceImpl.class
 com\andMySpringMVC\springmvc\model\Role.class
+com\andMySpringMVC\springmvc\configuration\SecurityConfig.class
 com\andMySpringMVC\springmvc\controller\AndMySpringMVCRestControllerUser.class
 com\andMySpringMVC\springmvc\service\UserServiceImpl.class
 com\andMySpringMVC\springmvc\dao\RoleDAOImpl.class

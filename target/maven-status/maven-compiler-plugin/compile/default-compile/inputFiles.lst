@@ -11,8 +11,10 @@ C:\Users\Alex\IdeaProjects\AndMySpringMVC\src\main\java\com\andMySpringMVC\sprin
 C:\Users\Alex\IdeaProjects\AndMySpringMVC\src\main\java\com\andMySpringMVC\springmvc\dao\RoleDAOImpl.java
 C:\Users\Alex\IdeaProjects\AndMySpringMVC\src\main\java\com\andMySpringMVC\springmvc\domain\MyElementDictionaryRunner.java
 C:\Users\Alex\IdeaProjects\AndMySpringMVC\src\main\java\com\andMySpringMVC\springmvc\controller\AndMySpringMVCRestControllerRole.java
+C:\Users\Alex\IdeaProjects\AndMySpringMVC\src\main\java\com\andMySpringMVC\springmvc\configuration\SecurityWebApplicationinitializer.java
 C:\Users\Alex\IdeaProjects\AndMySpringMVC\src\main\java\com\andMySpringMVC\springmvc\model\Role.java
 C:\Users\Alex\IdeaProjects\AndMySpringMVC\src\main\java\com\andMySpringMVC\springmvc\configuration\AndMySpringMVCInitializer.java
+C:\Users\Alex\IdeaProjects\AndMySpringMVC\src\main\java\com\andMySpringMVC\springmvc\configuration\SecurityConfig.java
 C:\Users\Alex\IdeaProjects\AndMySpringMVC\src\main\java\com\andMySpringMVC\springmvc\domain\MyElementDictionary.java
 C:\Users\Alex\IdeaProjects\AndMySpringMVC\src\main\java\com\andMySpringMVC\springmvc\model\Dictionary.java
 C:\Users\Alex\IdeaProjects\AndMySpringMVC\src\main\java\com\andMySpringMVC\springmvc\configuration\AndMySpringMVCConfiguration.java

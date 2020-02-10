@@ -1,12 +1,14 @@
 package com.andMySpringMVC.springmvc.model;
 
 
+import org.springframework.security.core.GrantedAuthority;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "role")
 @DiscriminatorValue(value = "Role")
-public class Role extends Dictionary{
+public class Role extends Dictionary implements GrantedAuthority {
     public Role() {
     }
 
@@ -73,5 +75,10 @@ public class Role extends Dictionary{
     public String toString() {
         return super.toString() +
                 ", discriminator='" + "Role";
+    }
+
+    @Override
+    public String getAuthority() {
+        return getName();
     }
 }

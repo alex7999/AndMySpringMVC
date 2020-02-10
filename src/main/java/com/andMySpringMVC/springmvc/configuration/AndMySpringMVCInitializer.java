@@ -15,7 +15,7 @@ public class AndMySpringMVCInitializer extends AbstractAnnotationConfigDispatche
 
     @Override
     protected Class<?>[] getServletConfigClasses() {
-        return null;
+        return new Class[] {WebConfig.class};//
     }
 
     @Override

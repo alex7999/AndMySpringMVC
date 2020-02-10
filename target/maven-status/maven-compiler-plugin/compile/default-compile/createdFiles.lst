@@ -1,5 +1,7 @@
 com\andMySpringMVC\springmvc\configuration\AndMySpringMVCInitializer.class
 com\andMySpringMVC\springmvc\configuration\HibernateConfig.class
+com\andMySpringMVC\springmvc\controller\RegistrarionController.class
+com\andMySpringMVC\springmvc\configuration\WebConfig.class
 com\andMySpringMVC\springmvc\dao\UserDAO.class
 com\andMySpringMVC\springmvc\model\Dictionary.class
 com\andMySpringMVC\springmvc\dao\RoleDAO.class

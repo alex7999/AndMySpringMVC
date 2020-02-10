@@ -1,3 +1,4 @@
+C:\Users\Alex\IdeaProjects\AndMySpringMVC\src\main\java\com\andMySpringMVC\springmvc\configuration\WebConfig.java
 C:\Users\Alex\IdeaProjects\AndMySpringMVC\src\main\java\com\andMySpringMVC\springmvc\service\RoleServiceImpl.java
 C:\Users\Alex\IdeaProjects\AndMySpringMVC\src\main\java\com\andMySpringMVC\springmvc\service\RoleService.java
 C:\Users\Alex\IdeaProjects\AndMySpringMVC\src\main\java\com\andMySpringMVC\springmvc\dao\UserDAO.java
@@ -12,11 +13,11 @@ C:\Users\Alex\IdeaProjects\AndMySpringMVC\src\main\java\com\andMySpringMVC\sprin
 C:\Users\Alex\IdeaProjects\AndMySpringMVC\src\main\java\com\andMySpringMVC\springmvc\domain\MyElementDictionaryRunner.java
 C:\Users\Alex\IdeaProjects\AndMySpringMVC\src\main\java\com\andMySpringMVC\springmvc\controller\AndMySpringMVCRestControllerRole.java
 C:\Users\Alex\IdeaProjects\AndMySpringMVC\src\main\java\com\andMySpringMVC\springmvc\configuration\SecurityWebApplicationinitializer.java
+C:\Users\Alex\IdeaProjects\AndMySpringMVC\src\main\java\com\andMySpringMVC\springmvc\controller\RegistrarionController.java
 C:\Users\Alex\IdeaProjects\AndMySpringMVC\src\main\java\com\andMySpringMVC\springmvc\model\Role.java
 C:\Users\Alex\IdeaProjects\AndMySpringMVC\src\main\java\com\andMySpringMVC\springmvc\configuration\AndMySpringMVCInitializer.java
 C:\Users\Alex\IdeaProjects\AndMySpringMVC\src\main\java\com\andMySpringMVC\springmvc\configuration\SecurityConfig.java
 C:\Users\Alex\IdeaProjects\AndMySpringMVC\src\main\java\com\andMySpringMVC\springmvc\domain\MyElementDictionary.java
 C:\Users\Alex\IdeaProjects\AndMySpringMVC\src\main\java\com\andMySpringMVC\springmvc\model\Dictionary.java
-C:\Users\Alex\IdeaProjects\AndMySpringMVC\src\main\java\com\andMySpringMVC\springmvc\configuration\AndMySpringMVCConfiguration.java
 C:\Users\Alex\IdeaProjects\AndMySpringMVC\src\main\java\com\andMySpringMVC\springmvc\configuration\HibernateConfig.java
 C:\Users\Alex\IdeaProjects\AndMySpringMVC\src\main\java\com\andMySpringMVC\springmvc\model\User.java

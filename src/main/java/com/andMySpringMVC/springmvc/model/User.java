@@ -2,13 +2,14 @@ package com.andMySpringMVC.springmvc.model;
 
 import javax.persistence.*;
 import com.andMySpringMVC.springmvc.model.Role;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 @Entity
 @Table(name = "user")
-public class User {
+public class User implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,7 +19,12 @@ public class User {
     @Column(name = "name")
     private String name;
 
-//    @Column(name = "role")
+    @Column(name = "username", nullable = false)
+    private String username;
+
+    @Column(name = "password", nullable = false)
+    private String password;
+
     @ManyToOne (optional=false)  //, cascade=CascadeType.ALL
     @JoinColumn (name="role")
     private Role role;
@@ -39,6 +45,13 @@ public class User {
         this.id = id;
     }
 
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
     public String getName() {
         return name;
@@ -66,5 +79,42 @@ public class User {
                 ", name='" + name + '\'' +
                 ", roles=" + role +
                 '}';
+    }
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        List<Role> listRoles = new ArrayList<Role>();
+        listRoles.add(getRole());
+        return listRoles;
+    }
+
+    @Override
+    public String getPassword() {
+        return null;
+    }
+
+    @Override
+    public String getUsername() {
+        return null;
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return false;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return false;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return false;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return false;
     }
 }

@@ -47,21 +47,24 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 .antMatchers("/*").permitAll()
-                .antMatchers("/user/*")/*.permitAll()*/
-                .hasRole("ADMIN") .anyRequest() . authenticated ()
+                .antMatchers("/role/**")//. authenticated ()
+                .hasRole("ADMIN")
+                .antMatchers("/user/**")//. authenticated ()
+                .hasAnyRole("USER", "ADMIN")//hasRole("USER")
+                .anyRequest() . authenticated ()
                 .and()
                 .formLogin()
 //                .loginProcessingUrl("/mylogin") // Submit URL
                 .loginPage("/login")//
                 .defaultSuccessUrl("/")//
-                .failureUrl("/login?error=true")//
-                .usernameParameter("username")//
-                .passwordParameter("password")
+//                .failureUrl("/login?error=true")//
+//                .usernameParameter("username")//
+//                .passwordParameter("password")
 //                .defaultSuccessUrl("/user/list")//user/list
 //                .failureUrl("/loginfail")
                 .permitAll()
                 .and()
-                .httpBasic()
+//                .httpBasic()
 //                .usernameParameter("user")
 //                .passwordParameter("passwordPaaar")
 //                .loginProcessingUrl("/login")
@@ -73,7 +76,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //                .logout()
 //                .logoutUrl("/logout")
 //                .logoutSuccessUrl("/user")
-                .and()
+//                .and()
                 .csrf().disable();
     }
 }

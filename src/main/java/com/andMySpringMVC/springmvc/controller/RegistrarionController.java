@@ -38,6 +38,7 @@ public class RegistrarionController {
 //            return "registration";
 //        }
         try {
+
             userService.add(userForm);
 
         } catch (Exception e){

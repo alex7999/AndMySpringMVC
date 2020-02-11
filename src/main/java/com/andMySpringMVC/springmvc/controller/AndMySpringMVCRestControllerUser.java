@@ -36,13 +36,7 @@ public class AndMySpringMVCRestControllerUser {
         return modelAndView;
     }
 
-    @RequestMapping(value = "/mylogin", method = RequestMethod.POST)
-    public ModelAndView loginEnter(Model model) {//Welcome page, non-rest
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("login");
-//        modelAndView.addObject("film", film);
-        return modelAndView;
-    }
+
 
     @RequestMapping(value = "/user/list", method = RequestMethod.GET)
     public List<User> allUser(){

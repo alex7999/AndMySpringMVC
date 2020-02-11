@@ -23,13 +23,13 @@ public class UserDAOImpl implements UserDAO, Serializable {
     @SuppressWarnings("unchecked")
     public List<User> allUsers() {
         Session session = sessionFactory.getCurrentSession();
-        return session.createQuery(" from User ").list();
+        return session.createQuery("from User").list();
     }
 
     @Override
     public void add(User user) {
         Session session = sessionFactory.getCurrentSession();
-        user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
+        user.setPassword(user.getPassword());//bCryptPasswordEncoder.encode()
         session.save(user);
     }
 

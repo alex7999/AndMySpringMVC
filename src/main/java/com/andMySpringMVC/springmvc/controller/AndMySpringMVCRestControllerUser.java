@@ -75,7 +75,7 @@ public class AndMySpringMVCRestControllerUser {
     }
 
     @RequestMapping(value = "/user/delete/{id}", method = RequestMethod.DELETE)
-    @PreAuthorize("Admin")
+//    @PreAuthorize("Admin")
     public String deleteRole(@PathVariable int id) {
         User userObj = userService.getById(id);
         userService.delete(userObj);

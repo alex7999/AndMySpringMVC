@@ -1,8 +1,13 @@
 package com.andMySpringMVC.springmvc.model;
 
+import org.springframework.transaction.annotation.Transactional;
+
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
+@Table(name = "hall")
 public class Hall {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -12,8 +17,15 @@ public class Hall {
     @Column(name = "name")
     private String name;
 
-    @Column(name = "qSit")
-    private int qSit;
+    @Column(name = "qRow")
+    private int qRow;
+
+    @Column(name = "qPosition")
+    private int qPosition;
+
+    @OneToMany(cascade = CascadeType.ALL,  mappedBy = "hall", fetch=FetchType.EAGER)//fetch=FetchType.LAZY,
+    private Set<Place> places = new HashSet<>();
+
 
     public Hall() {
     }
@@ -34,11 +46,27 @@ public class Hall {
         this.name = name;
     }
 
-    public int getqSit() {
-        return qSit;
+    public int getqRow() {
+        return qRow;
     }
 
-    public void setqSit(int qSit) {
-        this.qSit = qSit;
+    public void setqRow(int qRow) {
+        this.qRow = qRow;
+    }
+
+    public int getqPosition() {
+        return qPosition;
+    }
+
+    public void setqPosition(int qPosition) {
+        this.qPosition = qPosition;
+    }
+
+    public Set<Place> getPlaces() {
+        return places;
+    }
+
+    public void setPlaces(Set<Place> places) {
+        this.places = places;
     }
 }

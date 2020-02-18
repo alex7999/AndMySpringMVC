@@ -23,4 +23,5 @@ public class AndMySpringMVCInitializer extends AbstractAnnotationConfigDispatche
         return new String[] { "/" };
     }
 
+
 }

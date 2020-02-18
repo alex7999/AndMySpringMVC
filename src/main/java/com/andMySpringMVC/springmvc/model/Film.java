@@ -3,7 +3,7 @@ package com.andMySpringMVC.springmvc.model;
 import javax.persistence.*;
 
 @Entity
-public class Films {
+public class Film {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
@@ -18,10 +18,7 @@ public class Films {
     @Column(name = "duration")
     private int duration;
 
-    @Column(name = "active")
-    private boolean active;
-
-    public Films() {
+    public Film() {
 
     }
 
@@ -57,11 +54,5 @@ public class Films {
         this.genre = genre;
     }
 
-    public boolean isActive() {
-        return active;
-    }
 
-    public void setActive(boolean active) {
-        this.active = active;
-    }
 }

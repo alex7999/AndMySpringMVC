@@ -9,6 +9,7 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
@@ -45,7 +46,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.authorizeRequests()
+        http
+//                .sessionManagement().sessionCreationPolicy( SessionCreationPolicy.STATELESS) . and ()
+                .authorizeRequests()
                 .antMatchers("/*").permitAll()
                 .antMatchers("/role/**")//. authenticated ()
                 .hasRole("ADMIN")
@@ -64,7 +67,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //                .failureUrl("/loginfail")
                 .permitAll()
                 .and()
-//                .httpBasic()
+                .httpBasic()
 //                .usernameParameter("user")
 //                .passwordParameter("passwordPaaar")
 //                .loginProcessingUrl("/login")
@@ -76,7 +79,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //                .logout()
 //                .logoutUrl("/logout")
 //                .logoutSuccessUrl("/user")
-//                .and()
+                .and()
                 .csrf().disable();
     }
 }

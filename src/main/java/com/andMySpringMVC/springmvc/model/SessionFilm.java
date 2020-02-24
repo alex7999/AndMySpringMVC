@@ -4,31 +4,33 @@ import org.hibernate.annotations.GeneratorType;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "session")
+@Table(name = "sessionfilm")
 public class SessionFilm {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private int id;
 
     @Column(name = "name")
     private String name;
 
-//    @ManyToOne
-//    @Column(name = "film_id")
-//    private Film film;
-//
-//    @ManyToOne
-//    @Column(name = "hall_id")
-//    private Hall hall;
+    @ManyToOne
+    @JoinColumn(name = "film_id",  referencedColumnName = "id")
+    private Film film;
+
+    @ManyToOne
+    @JoinColumn(name = "hall_id")
+    private Hall hall;
 
     @Column(name = "timeStart")
-    private Timestamp timeStart;
+    private LocalDateTime timeStart;
 
     @Column(name = "timeFinish")
-    private Timestamp timeFinish;
+    private LocalDateTime timeFinish;
 
     public int getId() {
         return id;
@@ -46,35 +48,35 @@ public class SessionFilm {
         this.name = name;
     }
 
-//    public Film getFilm() {
-//        return film;
-//    }
-//
-//    public void setFilm(Film film) {
-//        this.film = film;
-//    }
-//
-//    public Hall getHall() {
-//        return hall;
-//    }
-//
-//    public void setHall(Hall hall) {
-//        this.hall = hall;
-//    }
+    public Film getFilm() {
+        return film;
+    }
 
-    public Timestamp getTimeStart() {
+    public void setFilm(Film film) {
+        this.film = film;
+    }
+
+    public Hall getHall() {
+        return hall;
+    }
+
+    public void setHall(Hall hall) {
+        this.hall = hall;
+    }
+
+    public LocalDateTime getTimeStart() {
         return timeStart;
     }
 
-    public void setTimeStart(Timestamp timeStart) {
+    public void setTimeStart(LocalDateTime timeStart) {
         this.timeStart = timeStart;
     }
 
-    public Timestamp getTimeFinish() {
+    public LocalDateTime getTimeFinish() {
         return timeFinish;
     }
 
-    public void setTimeFinish(Timestamp timeFinish) {
+    public void setTimeFinish(LocalDateTime timeFinish) {
         this.timeFinish = timeFinish;
     }
 }

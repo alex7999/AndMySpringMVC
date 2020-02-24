@@ -19,6 +19,11 @@ public class HallDAOImpl implements HallDAO{
     public List<Hall> allHalls() {
         Session session = sessionFactory.getCurrentSession();
         return session.createQuery("from Hall").list();
+
+//        пример запроса с явным указанием выбора подчиненного объекта
+//        User user = (User) em.createQuery(    "select u from User u " +        "left join fetch u.defaultBilling "
+//                +        "where u.id = :id")
+//                .setParameter("id", USER_ID)    .getSingleResult();
     }
 
     @Override

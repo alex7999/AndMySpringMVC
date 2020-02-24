@@ -10,4 +10,5 @@ public interface PlaceService {
     void delete(Place place);
     void edit(Place place);
     Place getById(int id);
+    Place getByPlace(int hall_id, int row, int position);
 }

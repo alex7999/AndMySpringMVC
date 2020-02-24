@@ -43,4 +43,11 @@ public class PlaceServiceImpl implements PlaceService {
     public Place getById(int id) {
         return placeDAO.getById(id);
     }
+
+    @Transactional
+    @Override
+    public Place getByPlace(int hall_id, int row, int position) {
+        return placeDAO.getByPlace(int hall_id, int row, int position);
+    }
+
 }

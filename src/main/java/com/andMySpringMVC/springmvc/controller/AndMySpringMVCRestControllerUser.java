@@ -28,13 +28,13 @@ public class AndMySpringMVCRestControllerUser {
         return "Welcome to Controller user.";
     }
 
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public ModelAndView loginPage(Model model) {//Welcome page, non-rest
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("login");
-//        modelAndView.addObject("film", film);
-        return modelAndView;
-    }
+//    @RequestMapping(value = "/login", method = RequestMethod.GET)
+//    public ModelAndView loginPage(Model model) {//Welcome page, non-rest
+//        ModelAndView modelAndView = new ModelAndView();
+//        modelAndView.setViewName("login");
+////        modelAndView.addObject("film", film);
+//        return modelAndView;
+//    }
 
 
 
@@ -48,6 +48,11 @@ public class AndMySpringMVCRestControllerUser {
     @RequestMapping(value = "/user/getById/{id}", method = RequestMethod.GET)
     public User getById(@PathVariable int id){
         return userService.getById(id);
+    }
+
+    @RequestMapping(value = "/user/i", method = RequestMethod.GET)
+    public User getByUser(){
+        return userService.getCurrentUser();
     }
 
     @RequestMapping(value = "/user/getByName/{username}", method = RequestMethod.GET)
@@ -66,17 +71,25 @@ public class AndMySpringMVCRestControllerUser {
 
 
     @RequestMapping(value = "/user/edit", method = RequestMethod.PUT)
-    public User editRole(int id, String name, int role_id) {// @ModelAttribute("user") User user
+    public User editUser(int id, String name, int role_id) {// @ModelAttribute("user") User user
         User userObj = userService.getById(id);
         userObj.setRole(roleService.getById(role_id));
         userObj.setName(name);
         userService.edit(userObj);
-        return userObj;//""+id  +"  " +name + "   "+role_id;
+        return userObj;
+    }
+
+    @RequestMapping(value = "/user/editCurrent", method = RequestMethod.PUT)
+    public User editUserCurrent(String name) {// @ModelAttribute("user") User user
+        User userObj = userService.getCurrentUser();
+        userObj.setName(name);
+        userService.edit(userObj);
+        return userObj;
     }
 
     @RequestMapping(value = "/user/delete/{id}", method = RequestMethod.DELETE)
 //    @PreAuthorize("Admin")
-    public String deleteRole(@PathVariable int id) {
+    public String deleteUser(@PathVariable int id) {
         User userObj = userService.getById(id);
         userService.delete(userObj);
         return userObj.toString();

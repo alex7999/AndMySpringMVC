@@ -39,11 +39,14 @@ public class RegistrarionController {
 //        }
         try {
 
+            if(userService.findByUsername(userForm.getUsername()) !=null){
+                throw new Exception();
+            };
             userService.add(userForm);
 
         } catch (Exception e){
             model.addAttribute("usernameError", "ѕользователь с таким именем уже существует");
-            return "registration";}
+            return "ѕользователь с таким именем уже существует";}
 
 
         return "redirect:/";

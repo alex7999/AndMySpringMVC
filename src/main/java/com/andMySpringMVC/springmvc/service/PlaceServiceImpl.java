@@ -47,7 +47,7 @@ public class PlaceServiceImpl implements PlaceService {
     @Transactional
     @Override
     public Place getByPlace(int hall_id, int row, int position) {
-        return placeDAO.getByPlace(int hall_id, int row, int position);
+        return placeDAO.getByPlace(hall_id, row, position);
     }
 
 }

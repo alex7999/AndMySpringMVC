@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletResponse;
+import java.util.List;
 
 @RestController
 public class TicketController {
@@ -36,21 +37,20 @@ public class TicketController {
     @RequestMapping(value = "/ticket/buy", method = RequestMethod.POST)
     public String buyTicket(int session_id, int row, int position){
         Ticket ticket = new Ticket();
-        User user = null;
         SessionFilm sessionFilm = sessionFilmService.getById(session_id);
-        Place place = placeService.getById(row);
+        Place place = placeService.getByPlace(sessionFilm.getHall().getId(), row, position);
         ticket.setPlace(place);
         ticket.setSessionFilm(sessionFilm);
-        Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        if (principal instanceof UserDetails){
-            user = userService.findByUsername(((UserDetails) principal).getUsername());
-        } else{
-            return "No user " + principal;
-        }
+        User user = userService.getCurrentUser();
         ticket.setUser(user);
         ticketService.add(ticket);
 
         return "Your ticket number " + ticket.getId();
+    }
+
+    @RequestMapping(value = "ticket/list", method = RequestMethod.GET)
+    public List<Ticket> allTicket(){
+        return ticketService.allTickets();
     }
 
     @ExceptionHandler({ConstraintViolationException.class})

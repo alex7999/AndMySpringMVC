@@ -17,6 +17,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.context.support.GenericApplicationContext;
 
 import java.util.List;
+import java.util.function.Function;
 
 //@WebAppConfiguration
 public class TestDictionary {
@@ -31,6 +32,7 @@ public class TestDictionary {
                             new AnnotationConfigApplicationContext(HibernateConfig.class);
                     UserService userService = context.getBean(UserService.class);
                     RoleService roleService = context.getBean(RoleService.class);
+
 //                    User user = new User("user1add", roleService.getById(24));
 //            userService.add(user);
 //                listRoles(userService.allUser());

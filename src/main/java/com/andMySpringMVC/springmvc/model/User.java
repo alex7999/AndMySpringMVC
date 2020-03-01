@@ -29,6 +29,9 @@ public class User implements UserDetails {
     @JoinColumn (name="role")
     private Role role;
 
+    @Column(name = "sect")
+    private User sect;
+
     public User() { }
 
     public User(String name, Role role) {
@@ -70,7 +73,13 @@ public class User implements UserDetails {
         this.role = role;
     }
 
+    public User getSect() {
+        return sect;
+    }
 
+    public void setSect(User sect) {
+        this.sect = sect;
+    }
 
     @Override
     public String toString() {

@@ -18,6 +18,9 @@ public class Film {
     @Column(name = "duration")
     private int duration;
 
+    @Embedded
+    private Money money;
+
     public Film() {
 
     }
@@ -54,5 +57,11 @@ public class Film {
         this.genre = genre;
     }
 
+    public Money getMoney() {
+        return money;
+    }
 
+    public void setMoney(Money money) {
+        this.money = money;
+    }
 }

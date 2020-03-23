@@ -25,20 +25,15 @@ public class Place {
     @JoinColumn(name = "hall_id")//, referencedColumnName = "id"
     private Hall hall;
 
+    @Column(name = "coef")
+    private double coef;
+
     public int getId() {
         return id;
     }
 
     public void setId(int id) {
         this.id = id;
-    }
-
-    public int getRow() {
-        return nRow;
-    }
-
-    public void setRow(int row) {
-        this.nRow = nRow;
     }
 
     public int getPosition() {
@@ -55,5 +50,21 @@ public class Place {
 
     public void setHall(Hall hall) {
         this.hall = hall;
+    }
+
+    public int getnRow() {
+        return nRow;
+    }
+
+    public void setnRow(int nRow) {
+        this.nRow = nRow;
+    }
+
+    public double getCoef() {
+        return coef;
+    }
+
+    public void setCoef(double coef) {
+        this.coef = coef;
     }
 }

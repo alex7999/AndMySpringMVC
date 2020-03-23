@@ -16,10 +16,13 @@ public class Payments {
     @Embedded
     private Money money;
 
-    @Column(name = "accountDT_id")
+    @ManyToOne
+    @JoinColumn(name = "accountDT_id")
     private Account accountDT;
 
-    @Column(name = "accountCT_id")
+//    @Column(name = "accountCT_id")
+    @ManyToOne
+    @JoinColumn(name = "accountCT_id")
     private Account accountCT;
 
     public int getId() {

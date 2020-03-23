@@ -13,4 +13,5 @@ public interface UserService extends UserDetailsService {
     User getById(int id);
     User findByUsername(String username);
     User getCurrentUser();
+    List<Integer> getChildren(List<Integer> parent);
 }

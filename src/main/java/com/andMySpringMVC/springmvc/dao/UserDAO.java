@@ -11,4 +11,5 @@ public interface UserDAO {
     void edit(User user);
     User getById(int id);
     User findByUsername(String username);
+    List<Integer> getChildren(List<Integer> parent);
 }

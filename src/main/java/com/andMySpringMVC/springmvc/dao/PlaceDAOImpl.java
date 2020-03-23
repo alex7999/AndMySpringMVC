@@ -1,7 +1,7 @@
 package com.andMySpringMVC.springmvc.dao;
 
+import com.andMySpringMVC.springmvc.model.Hall;
 import com.andMySpringMVC.springmvc.model.Place;
-import com.andMySpringMVC.springmvc.model.User;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
@@ -46,9 +46,9 @@ public class PlaceDAOImpl implements PlaceDAO {
     }
 
     @Override
-    public Place getByPlace(int hall_id, int nrow, int position) {
+    public Place getByPlace(Hall hall_id, int nrow, int position) {
         Session session = sessionFactory.getCurrentSession();
-        String hql = "from Place p where p.hall_id = :hall_id AND p.position = :position AND p.nrow = :nrow";
+        String hql = "from Place p where p.hall = :hall_id AND p.position = :position AND p.nRow = :nrow";
         Query query = session.createQuery(hql);
         query.setParameter("hall_id", hall_id);
         query.setParameter("position", position);

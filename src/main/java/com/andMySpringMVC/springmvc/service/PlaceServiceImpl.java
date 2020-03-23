@@ -1,6 +1,7 @@
 package com.andMySpringMVC.springmvc.service;
 
 import com.andMySpringMVC.springmvc.dao.PlaceDAO;
+import com.andMySpringMVC.springmvc.model.Hall;
 import com.andMySpringMVC.springmvc.model.Place;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -46,7 +47,7 @@ public class PlaceServiceImpl implements PlaceService {
 
     @Transactional
     @Override
-    public Place getByPlace(int hall_id, int row, int position) {
+    public Place getByPlace(Hall hall_id, int row, int position) {
         return placeDAO.getByPlace(hall_id, row, position);
     }
 

@@ -14,7 +14,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.security.PublicKey;
 import java.util.Collection;
 import java.util.List;
 
@@ -108,5 +107,11 @@ public class UserServiceImpl implements UserService, UserDetailsService {
         } else{
             return null;
         }
+    }
+
+    @Override
+    @Transactional
+    public List<Integer> getChildren(List<Integer> parent) {
+        return userDAO.getChildren(parent);
     }
 }

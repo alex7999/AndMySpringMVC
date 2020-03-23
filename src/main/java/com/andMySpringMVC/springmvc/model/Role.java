@@ -6,7 +6,7 @@ import org.springframework.security.core.GrantedAuthority;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "role")
+//@Table(name = "role")
 @DiscriminatorValue(value = "Role")
 public class Role extends Dictionary implements GrantedAuthority {
     public Role() {

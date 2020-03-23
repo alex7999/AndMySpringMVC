@@ -8,7 +8,8 @@ public class Account {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "user_id")
+//    @Column(name = "user")
+    @OneToOne(cascade = CascadeType.ALL, mappedBy = "account")
     private User user;
 
     @Embedded

@@ -2,6 +2,7 @@ package com.andMySpringMVC.springmvc.model;
 
 import javax.persistence.*;
 import com.andMySpringMVC.springmvc.model.Role;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -29,8 +30,34 @@ public class User implements UserDetails {
     @JoinColumn (name="role")
     private Role role;
 
-    @Column(name = "sect")
+//    @JsonIgnore
+    @ManyToOne (cascade = CascadeType.REMOVE)
+    @JoinColumn(name = "sect")
     private User sect;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "sect", fetch = FetchType.LAZY, cascade = {CascadeType.ALL})
+    private List<User> children = new ArrayList<>();
+
+    @OneToOne(cascade = CascadeType.REMOVE)
+    @JoinColumn(name = "account", referencedColumnName = "id")
+    private Account account;
+
+    public List<User> getChildren() {
+        return children;
+    }
+
+    public void setChildren(List<User> children) {
+        this.children = children;
+    }
+
+    public Account getAccount() {
+        return account;
+    }
+
+    public void setAccount(Account account) {
+        this.account = account;
+    }
 
     public User() { }
 

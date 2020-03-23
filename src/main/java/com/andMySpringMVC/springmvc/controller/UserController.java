@@ -1,7 +1,6 @@
 package com.andMySpringMVC.springmvc.controller;
 
-//import com.andMySpringMVC.springmvc.domain.MyElementDictionary;
-//import com.andMySpringMVC.springmvc.domain.MyElementDictionaryRunner;
+
 import com.andMySpringMVC.springmvc.model.User;
 import com.andMySpringMVC.springmvc.service.RoleService;
 import com.andMySpringMVC.springmvc.service.UserService;
@@ -16,7 +15,7 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.List;
 
 @RestController
-public class AndMySpringMVCRestControllerUser {
+public class UserController {
     @Autowired
     private UserService userService;
 
@@ -28,40 +27,31 @@ public class AndMySpringMVCRestControllerUser {
         return "Welcome to Controller user.";
     }
 
-//    @RequestMapping(value = "/login", method = RequestMethod.GET)
-//    public ModelAndView loginPage(Model model) {//Welcome page, non-rest
-//        ModelAndView modelAndView = new ModelAndView();
-//        modelAndView.setViewName("login");
-////        modelAndView.addObject("film", film);
-//        return modelAndView;
-//    }
-
-
 
     @RequestMapping(value = "/user/list", method = RequestMethod.GET)
-    public List<User> allUser(){
+    public List<User> allUser() {
 
         return userService.allUser();
 
     }
 
     @RequestMapping(value = "/user/getById/{id}", method = RequestMethod.GET)
-    public User getById(@PathVariable int id){
+    public User getById(@PathVariable int id) {
         return userService.getById(id);
     }
 
     @RequestMapping(value = "/user/i", method = RequestMethod.GET)
-    public User getByUser(){
+    public User getByUser() {
         return userService.getCurrentUser();
     }
 
     @RequestMapping(value = "/user/getByName/{username}", method = RequestMethod.GET)
-    public UserDetails getById(@PathVariable String username){
+    public UserDetails getByName(@PathVariable String username) {
         return userService.findByUsername(username);
     }
 
     @RequestMapping(value = "/user/add", method = RequestMethod.POST)
-    public User addUser(String nameS, int role_id) {//@ModelAttribute("names, role_id")
+    public User addUser(String nameS, Integer role_id) {//@ModelAttribute("names, role_id")
 
         User userObj = new User(nameS, roleService.getById(role_id));
 

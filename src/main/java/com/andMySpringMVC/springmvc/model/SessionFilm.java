@@ -32,6 +32,9 @@ public class SessionFilm {
     @Column(name = "timeFinish")
     private LocalDateTime timeFinish;
 
+    @Column(name = "coef")
+    private double coef;
+
     public int getId() {
         return id;
     }
@@ -78,5 +81,13 @@ public class SessionFilm {
 
     public void setTimeFinish(LocalDateTime timeFinish) {
         this.timeFinish = timeFinish;
+    }
+
+    public double getCoef() {
+        return coef;
+    }
+
+    public void setCoef(double coef) {
+        this.coef = coef;
     }
 }

@@ -22,6 +22,10 @@ public class Ticket implements Serializable {
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     private User user;
 
+    @Embedded
+    private Money money;
+
+
     public int getId() {
         return id;
     }
@@ -52,5 +56,13 @@ public class Ticket implements Serializable {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public Money getMoney() {
+        return money;
+    }
+
+    public void setMoney(Money money) {
+        this.money = money;
     }
 }
